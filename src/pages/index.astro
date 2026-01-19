@@ -1,0 +1,65 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Reflection Network</title>
+	</head>
+	<body>
+		<main>
+			<h1>Reflection Network</h1>
+			<p class="coming-soon">Coming soon</p>
+		</main>
+	</body>
+</html>
+
+<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+		font-family: system-ui, -apple-system, sans-serif;
+		color: #fff;
+	}
+
+	main {
+		text-align: center;
+		padding: 2rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		margin: 0 0 1rem 0;
+		letter-spacing: -0.02em;
+	}
+
+	.coming-soon {
+		font-size: 1.25rem;
+		color: rgba(255, 255, 255, 0.7);
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 2rem;
+		}
+		.coming-soon {
+			font-size: 1rem;
+		}
+	}
+</style>
