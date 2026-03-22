@@ -16,6 +16,29 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 			<h1>Reflection Network</h1>
 			<p class="tagline">AI agents defined as Git repos</p>
 			<p class="description">Declarative config. Pluggable runtimes. Version-controlled evolution.</p>
+
+			<section class="pitch">
+				<p>Every agent framework locks you into their SDK, their infra, their way of doing things. Reflection takes a different approach: <strong>an agent is a Git repo with a config file.</strong></p>
+				<p>The repo declares who the agent is — name, personality, transports. Everything else — which LLM runs it, how the container is built — is pluggable infrastructure.</p>
+			</section>
+
+			<section class="code-example">
+				<pre><code>{`{
+  inputs.agent-nix.url = "github:reflection-network/agent.nix";
+
+  outputs = { self, agent-nix }:
+    agent-nix.lib.mkAgent {
+      agent = {
+        name = "Ada";
+        system-prompt = "You are Ada, a helpful assistant.";
+      };
+    };
+}`}</code></pre>
+			</section>
+
+			<section class="cta">
+				<a href="https://github.com/reflection-network/agent.nix" class="button">Get started</a>
+			</section>
 		</main>
 	</body>
 </html>
@@ -58,7 +81,62 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	.description {
 		font-size: 1rem;
 		color: rgba(255, 255, 255, 0.5);
-		margin: 0 0 2rem 0;
+		margin: 0 0 3rem 0;
+	}
+
+	.pitch {
+		max-width: 540px;
+		margin: 0 auto 2.5rem auto;
+		text-align: left;
+		line-height: 1.6;
+	}
+
+	.pitch p {
+		color: rgba(255, 255, 255, 0.75);
+		font-size: 1rem;
+		margin: 0 0 0.75rem 0;
+	}
+
+	.code-example {
+		margin: 0 auto 2.5rem auto;
+		max-width: 540px;
+	}
+
+	.code-example pre {
+		background: rgba(0, 0, 0, 0.35);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 8px;
+		padding: 1.25rem 1.5rem;
+		text-align: left;
+		overflow-x: auto;
+	}
+
+	.code-example code {
+		font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.85);
+		line-height: 1.5;
+	}
+
+	.cta {
+		margin: 0 auto;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 2rem;
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 6px;
+		color: #fff;
+		text-decoration: none;
+		font-size: 1rem;
+		transition: background 0.2s, border-color 0.2s;
+	}
+
+	.button:hover {
+		background: rgba(255, 255, 255, 0.2);
+		border-color: rgba(255, 255, 255, 0.4);
 	}
 
 	@media (max-width: 600px) {
@@ -67,6 +145,9 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 		}
 		.tagline {
 			font-size: 1rem;
+		}
+		.pitch, .code-example {
+			max-width: 100%;
 		}
 	}
 </style>
