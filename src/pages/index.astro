@@ -37,7 +37,8 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 			</section>
 
 			<section class="cta">
-				<a href="https://github.com/reflection-network/agent.nix" class="button">Get started</a>
+				<a href="https://docs.reflection.network" class="button">Docs</a>
+				<a href="https://github.com/reflection-network" class="button button-secondary">GitHub</a>
 			</section>
 		</main>
 	</body>
@@ -137,6 +138,15 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	.button:hover {
 		background: rgba(255, 255, 255, 0.2);
 		border-color: rgba(255, 255, 255, 0.4);
+	}
+
+	.button-secondary {
+		background: transparent;
+		border-color: rgba(255, 255, 255, 0.15);
+	}
+
+	.cta .button + .button {
+		margin-left: 0.75rem;
 	}
 
 	@media (max-width: 600px) {
