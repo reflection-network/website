@@ -14,7 +14,8 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	<body>
 		<main>
 			<h1>Reflection Network</h1>
-			<p class="coming-soon">Coming soon</p>
+			<p class="tagline">AI agents defined as Git repos</p>
+			<p class="description">Declarative config. Pluggable runtimes. Version-controlled evolution.</p>
 		</main>
 	</body>
 </html>
@@ -48,19 +49,23 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 		letter-spacing: -0.02em;
 	}
 
-	.coming-soon {
+	.tagline {
 		font-size: 1.25rem;
-		color: rgba(255, 255, 255, 0.7);
-		margin: 0;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
+		color: rgba(255, 255, 255, 0.85);
+		margin: 0 0 0.5rem 0;
+	}
+
+	.description {
+		font-size: 1rem;
+		color: rgba(255, 255, 255, 0.5);
+		margin: 0 0 2rem 0;
 	}
 
 	@media (max-width: 600px) {
 		h1 {
 			font-size: 2rem;
 		}
-		.coming-soon {
+		.tagline {
 			font-size: 1rem;
 		}
 	}
