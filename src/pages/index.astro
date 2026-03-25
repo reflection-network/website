@@ -13,13 +13,67 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	</head>
 	<body>
 		<main>
-			<h1>Reflection Network</h1>
-			<p class="tagline">AI agents defined as Git repos</p>
-			<p class="description">Declarative config. Pluggable runtimes. Version-controlled evolution.</p>
+			<section class="hero">
+				<h1>Reflection Network</h1>
+				<p class="tagline">Become the founder of your AI-native company</p>
+				<p class="description">Create, deploy, and manage a team of AI agents. Your agents. Your infrastructure. Your rules.</p>
 
-			<section class="pitch">
-				<p>Every agent framework locks you into their SDK, their infra, their way of doing things. Reflection takes a different approach: <strong>an agent is a Git repo with a config file.</strong></p>
-				<p>The repo declares who the agent is — name, personality, transports. Everything else — which LLM runs it, how the container is built — is pluggable infrastructure.</p>
+				<div class="cta">
+					<a href="https://docs.reflection.network" class="button">Docs</a>
+					<a href="https://github.com/reflection-network" class="button button-secondary">GitHub</a>
+				</div>
+			</section>
+
+			<section class="features">
+				<div class="feature-card">
+					<h2>Build your team</h2>
+					<p>Define each agent's role, personality, and capabilities in a config file. No code needed — just declare who each agent is and what they can do.</p>
+					<div class="status-row">
+						<span class="badge badge-built">Built</span>
+						<span class="status-text">Single agent</span>
+						<span class="badge badge-soon">Coming Soon</span>
+						<span class="status-text muted">Multi-agent team management</span>
+					</div>
+				</div>
+
+				<div class="feature-card">
+					<h2>Own everything</h2>
+					<p>Your agents live in Git repos you control. Not locked to any platform, any vendor, any SDK. Fork, branch, version — standard dev workflow.</p>
+					<div class="status-row">
+						<span class="badge badge-built">Built</span>
+					</div>
+				</div>
+
+				<div class="feature-card">
+					<h2>Run anywhere, on anything</h2>
+					<p>Our hosted platform, your VPS, your Mac Mini. OpenClaw, ZeroClaw, Claude Code — whatever runtime exists today or appears tomorrow, you plug it in with one line. Reflection defines who the agent is. The runtime underneath is a replaceable, constantly improving detail.</p>
+					<div class="status-row">
+						<span class="badge badge-built">Built</span>
+						<span class="status-text">Self-hosted, 2 runtimes</span>
+						<span class="badge badge-soon">Coming Soon</span>
+						<span class="status-text muted">Hosted platform, more runtimes</span>
+					</div>
+				</div>
+
+				<div class="feature-card">
+					<h2>Your company evolves</h2>
+					<p>Every change to an agent is a Git commit. Full history, instant rollback. Agents propose improvements to themselves via pull requests — you approve.</p>
+					<div class="status-row">
+						<span class="badge badge-built">Built</span>
+						<span class="status-text">Version control</span>
+						<span class="badge badge-soon">Coming Soon</span>
+						<span class="status-text muted">Self-modification via PR</span>
+					</div>
+				</div>
+
+				<div class="feature-card">
+					<h2>You're the founder</h2>
+					<p>You set the direction and bear the responsibility. Agents execute. Classical management principles applied to AI — delegation, oversight, accountability.</p>
+					<div class="status-row">
+						<span class="badge badge-soon">Coming Soon</span>
+						<span class="status-text muted">Management tooling, observability</span>
+					</div>
+				</div>
 			</section>
 
 			<section class="code-example">
@@ -36,10 +90,10 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 }`}</code></pre>
 			</section>
 
-			<section class="cta">
-				<a href="https://docs.reflection.network" class="button">Docs</a>
-				<a href="https://github.com/reflection-network" class="button button-secondary">GitHub</a>
-			</section>
+			<footer>
+				<a href="https://docs.reflection.network">Docs</a>
+				<a href="https://github.com/reflection-network">GitHub</a>
+			</footer>
 		</main>
 	</body>
 </html>
@@ -49,21 +103,24 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	html, body {
 		margin: 0;
 		padding: 0;
-		height: 100%;
+		min-height: 100%;
 	}
 
 	body {
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
 		font-family: system-ui, -apple-system, sans-serif;
 		color: #fff;
 	}
 
 	main {
-		text-align: center;
+		max-width: 640px;
+		margin: 0 auto;
 		padding: 2rem;
+	}
+
+	.hero {
+		text-align: center;
+		padding: 4rem 0 3rem 0;
 	}
 
 	h1 {
@@ -82,41 +139,7 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	.description {
 		font-size: 1rem;
 		color: rgba(255, 255, 255, 0.5);
-		margin: 0 0 3rem 0;
-	}
-
-	.pitch {
-		max-width: 540px;
-		margin: 0 auto 2.5rem auto;
-		text-align: left;
-		line-height: 1.6;
-	}
-
-	.pitch p {
-		color: rgba(255, 255, 255, 0.75);
-		font-size: 1rem;
-		margin: 0 0 0.75rem 0;
-	}
-
-	.code-example {
-		margin: 0 auto 2.5rem auto;
-		max-width: 540px;
-	}
-
-	.code-example pre {
-		background: rgba(0, 0, 0, 0.35);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 8px;
-		padding: 1.25rem 1.5rem;
-		text-align: left;
-		overflow-x: auto;
-	}
-
-	.code-example code {
-		font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
-		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.85);
-		line-height: 1.5;
+		margin: 0 0 2rem 0;
 	}
 
 	.cta {
@@ -149,6 +172,111 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 		margin-left: 0.75rem;
 	}
 
+	.features {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.feature-card {
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+		padding: 1.5rem;
+		text-align: left;
+	}
+
+	.feature-card h2 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin: 0 0 0.75rem 0;
+	}
+
+	.feature-card p {
+		color: rgba(255, 255, 255, 0.75);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0 0 1rem 0;
+	}
+
+	.status-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.8rem;
+	}
+
+	.badge {
+		padding: 0.15rem 0.5rem;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	.badge-built {
+		background: rgba(74, 222, 128, 0.15);
+		color: rgba(74, 222, 128, 0.9);
+		border: 1px solid rgba(74, 222, 128, 0.25);
+	}
+
+	.badge-soon {
+		background: rgba(251, 191, 36, 0.1);
+		color: rgba(251, 191, 36, 0.7);
+		border: 1px solid rgba(251, 191, 36, 0.2);
+	}
+
+	.status-text {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.status-text.muted {
+		color: rgba(255, 255, 255, 0.35);
+	}
+
+	.code-example {
+		margin: 0 auto 3rem auto;
+	}
+
+	.code-example pre {
+		background: rgba(0, 0, 0, 0.35);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 8px;
+		padding: 1.25rem 1.5rem;
+		text-align: left;
+		overflow-x: auto;
+	}
+
+	.code-example code {
+		font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.85);
+		line-height: 1.5;
+	}
+
+	footer {
+		text-align: center;
+		padding: 2rem 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	footer a {
+		color: rgba(255, 255, 255, 0.4);
+		text-decoration: none;
+		font-size: 0.85rem;
+		transition: color 0.2s;
+	}
+
+	footer a:hover {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
 	@media (max-width: 600px) {
 		h1 {
 			font-size: 2rem;
@@ -156,8 +284,8 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 		.tagline {
 			font-size: 1rem;
 		}
-		.pitch, .code-example {
-			max-width: 100%;
+		.hero {
+			padding: 2rem 0;
 		}
 	}
 </style>
