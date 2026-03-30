@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Reflection Manifesto">
+	<section class="header">
+		<h1>The Reflection Manifesto</h1>
+		<p class="subtitle">This is a living document. It evolves as we learn.</p>
+	</section>
+
+	<section class="principles">
+		<article class="principle">
+			<h2>1. Every person is a founder</h2>
+			<p>You don't need a technical co-founder or a team of engineers to build an organization. You need a clear vision, strong values, and the right platform.</p>
+			<p>A CEO, a freelancer, a teacher, a researcher — everyone deserves their own AI team. Everyone who doesn't have one will be outcompeted by someone who does.</p>
+		</article>
+
+		<article class="principle">
+			<h2>2. Agents are identities, not implementations</h2>
+			<p>An agent is a <em>who</em>, not a <em>how</em>. Role, personality, skills, access, instructions, knowledge — these define your agent. The runtime is a detail.</p>
+			<p>A good job description survives any technology shift. So should your agent definition.</p>
+		</article>
+
+		<article class="principle">
+			<h2>3. The founder's job: vision, values, boundaries</h2>
+			<p>You don't micromanage your best employees. You set direction, define what's acceptable, and let them figure out the rest.</p>
+			<p>Same with AI agents. Reflection helps you focus on what only a human can decide — and hides everything else.</p>
+		</article>
+
+		<article class="principle">
+			<h2>4. Organizations evolve themselves</h2>
+			<p>Every agent is a Git repository. Agents can improve themselves and each other. The best organizations aren't designed top-down — they grow, adapt, and get better through feedback loops.</p>
+			<p>Your AI organization should work the same way. That's what "reflection" means — agents that are self-aware, that can analyze and improve themselves and their team.</p>
+		</article>
+
+		<article class="principle">
+			<h2>5. Own your infrastructure</h2>
+			<p>Your agents, your data, your hardware. Cloud is an option, not a requirement.</p>
+			<p>NixOS gives you reproducible, auditable, version-controlled infrastructure. Everything is plain text in repositories you own. No vendor lock-in — walk away anytime and take everything with you.</p>
+		</article>
+
+		<article class="principle">
+			<h2>6. Security is a constraint, not a feature</h2>
+			<p>Agents start with zero access and earn capabilities. Like a new employee — you don't give them the company credit card on day one.</p>
+			<p>Security isn't something you bolt on. It's the default state.</p>
+		</article>
+
+		<article class="principle">
+			<h2>7. Runtimes come and go. Your team stays.</h2>
+			<p>Python scripts. LangChain. Claude Code. OpenClaw. Humanoid robots. We don't know what's next, and we don't need to.</p>
+			<p>The agent definition is permanent. The runtime is replaceable. Your team survives every technology transition.</p>
+		</article>
+
+		<article class="principle">
+			<h2>8. From containers to robots</h2>
+			<p>The same configuration that deploys a cloud agent today will assemble a physical robot tomorrow. Continuous Assembly — where <code>git push</code> builds not just software, but hardware.</p>
+			<p>We don't know what comes after robots. But the architecture is ready for whatever it is.</p>
+		</article>
+
+		<article class="principle">
+			<h2>9. We build on the best of what exists</h2>
+			<p>We don't reinvent what others have built better. Nix, Git, NixOS, open-source runtimes — we stand on the shoulders of the best tools available and integrate them into a coherent platform.</p>
+			<p>The AI landscape evolves fast. We track it, evaluate it, and adopt the best of it — so you don't have to.</p>
+		</article>
+
+		<article class="principle">
+			<h2>10. We ship what works</h2>
+			<p>No vaporware. No aspirational architecture. This manifesto is our North Star — the direction we're heading. The documentation shows what's working today.</p>
+			<p>We close the gap between vision and reality one iteration at a time.</p>
+		</article>
+	</section>
+
+	<section class="bottom-cta">
+		<p><a href="/">Back to Home</a></p>
+		<p><a href="https://docs.reflection.network">Get Started</a> — see what's working today.</p>
+	</section>
+</BaseLayout>
+
+<style>
+	.header {
+		text-align: center;
+		padding: 4rem 0 2rem 0;
+		border-bottom: 1px solid rgba(224, 224, 224, 0.08);
+		margin-bottom: 3rem;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin: 0 0 1rem 0;
+		letter-spacing: -0.02em;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+		color: rgba(224, 224, 224, 0.4);
+		margin: 0;
+		font-style: italic;
+	}
+
+	.principles {
+		margin-bottom: 3rem;
+	}
+
+	.principle {
+		margin-bottom: 2.5rem;
+	}
+
+	.principle h2 {
+		font-size: 1.35rem;
+		font-weight: 700;
+		margin: 0 0 0.75rem 0;
+		letter-spacing: -0.01em;
+		line-height: 1.3;
+	}
+
+	.principle p {
+		font-size: 1rem;
+		color: rgba(224, 224, 224, 0.65);
+		margin: 0 0 0.5rem 0;
+		line-height: 1.7;
+	}
+
+	.principle p:last-child {
+		margin-bottom: 0;
+	}
+
+	.principle em {
+		color: rgba(224, 224, 224, 0.85);
+		font-style: italic;
+	}
+
+	.principle code {
+		font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+		font-size: 0.9em;
+		background: rgba(0, 0, 0, 0.3);
+		padding: 0.15em 0.4em;
+		border-radius: 3px;
+	}
+
+	.bottom-cta {
+		border-top: 1px solid rgba(224, 224, 224, 0.08);
+		padding-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.bottom-cta p {
+		font-size: 1rem;
+		color: rgba(224, 224, 224, 0.45);
+		margin: 0 0 0.5rem 0;
+	}
+
+	.bottom-cta a {
+		color: #e0e0e0;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+		transition: border-color 0.2s, color 0.2s;
+	}
+
+	.bottom-cta a:hover {
+		border-color: #4fc3f7;
+		color: #4fc3f7;
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 1.75rem;
+		}
+		.header {
+			padding: 2rem 0 1.5rem 0;
+		}
+		.principle h2 {
+			font-size: 1.15rem;
+		}
+	}
+</style>

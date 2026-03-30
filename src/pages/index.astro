@@ -4,44 +4,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout>
 	<section class="hero">
-		<h1>Reflection Network</h1>
-		<p class="tagline">Become the founder of your AI-native company</p>
-		<p class="description">Create, deploy, and manage a team of AI agents. Your agents. Your infrastructure. Your rules.</p>
+		<h1>You don't need a better AI tool.<br/>You need an AI team.</h1>
+		<p class="tagline">One agent is a toy. A team of agents that know their roles, coordinate with each other, and improve themselves — that's a competitive advantage.</p>
+		<p class="description">Reflection is the platform for people who think in organizations, not in prompts.</p>
 
 		<div class="cta">
-			<a href="https://docs.reflection.network" class="button">Get Started</a>
-			<a href="https://github.com/reflection-network" class="button button-secondary">GitHub</a>
-			<a href="https://x.com/reflection_dev" class="button button-secondary">Twitter</a>
+			<a href="/manifesto" class="button">Read the Manifesto</a>
 		</div>
 	</section>
 
-	<section class="highlights">
-		<div class="highlight">
-			<h3>Declarative agents.</h3>
-			<p>Nix config, no SDK lock-in.</p>
-		</div>
-		<div class="highlight">
-			<h3>Git-native.</h3>
-			<p>Branch, fork, version, roll back.</p>
-		</div>
-		<div class="highlight">
-			<h3>Run anywhere.</h3>
-			<p>Self-host, swap runtimes with one line.</p>
-		</div>
+	<section class="hero-image">
+		<img src="/og-image.jpg" alt="Evolution of AI agents — from simple scripts to humanoid robots" />
 	</section>
 
-	<section class="code-example">
-		<pre><code>{`{
-  inputs.agent-nix.url = "github:reflection-network/agent.nix";
+	<section class="content-section">
+		<h2>Every year, a new framework. Every year, you start over.</h2>
+		<p>2023: Python scripts and API wrappers. 2024: LangChain and AutoGPT. 2025: Claude Code and computer use. 2026: OpenClaw and autonomous runtimes. 2027: ???</p>
+		<p>The industry reinvents itself every twelve months. And every twelve months, your agents die with their runtime.</p>
+	</section>
 
-  outputs = { self, agent-nix }:
-    agent-nix.lib.mkAgent {
-      agent = {
-        name = "Agent";
-        system-prompt = "You are Agent, a helpful assistant.";
-      };
-    };
-}`}</code></pre>
+	<section class="content-section">
+		<h2>An agent is not code. An agent is an identity.</h2>
+		<p>A role. A personality. A set of capabilities. A set of boundaries. Just like a real employee.</p>
+		<p>You don't rewrite your employees when you switch from Slack to Teams. Why should you rewrite your agents when the runtime changes?</p>
+	</section>
+
+	<section class="content-section">
+		<h2>Describe who you need. We bring them to life.</h2>
+		<p>You are the founder. You are the architect of your organization. You define roles, structure, values, and boundaries. Reflection takes your description and builds the best possible team using whatever technology exists today.</p>
+		<p>Your accountant doesn't need you to install QuickBooks for them. They know their tools and set up their own workspace. Your AI agents should work the same way — you define who they are, they figure out the rest.</p>
+		<p>Tomorrow, the technology will be better. Your team description stays the same. Your agents get better automatically.</p>
+	</section>
+
+	<section class="content-section">
+		<h2>Your organization improves itself.</h2>
+		<p>Every agent is a Git repository. Agents can read and modify their own configuration — and each other's. They learn. They adapt. They get better.</p>
+		<p>Your role as a founder: set the direction, define the values, draw the boundaries. The organization evolves on its own within the space you've given it.</p>
+	</section>
+
+	<section class="content-section">
+		<h2>Your hardware. Your data. Your rules.</h2>
+		<p>A Hetzner box. A Mac Mini under your desk. A rack in your office. Reflection runs on your infrastructure, on NixOS, fully configured through Git.</p>
+		<p>No vendor lock-in. The entire system is plain text in repositories you own. Walk away anytime — take everything with you.</p>
+	</section>
+
+	<section class="content-section">
+		<h2>From containers to robots. Same config.</h2>
+		<p>Today, your agent runs in a container. Tomorrow, it runs on a physical robot assembled from the same repository.</p>
+		<p>Continuous Assembly: push to deploy — not just software, but hardware.</p>
+		<p>We don't know what comes after that. But architecturally, we're ready.</p>
+	</section>
+
+	<section class="bottom-cta">
+		<p><a href="/manifesto">Read the Manifesto</a> to understand our principles.</p>
+		<p><a href="https://docs.reflection.network">Get Started</a> if you're ready to build.</p>
 	</section>
 </BaseLayout>
 
@@ -49,25 +65,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	.hero {
 		text-align: center;
 		padding: 4rem 0 3rem 0;
+		border-bottom: 1px solid rgba(224, 224, 224, 0.08);
+		margin-bottom: 3rem;
 	}
 
 	h1 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 700;
-		margin: 0 0 1rem 0;
+		margin: 0 0 1.5rem 0;
 		letter-spacing: -0.02em;
+		line-height: 1.2;
 	}
 
 	.tagline {
-		font-size: 1.25rem;
+		font-size: 1.15rem;
 		color: rgba(224, 224, 224, 0.7);
-		margin: 0 0 0.5rem 0;
+		margin: 0 0 0.75rem 0;
+		line-height: 1.6;
 	}
 
 	.description {
 		font-size: 1rem;
 		color: rgba(224, 224, 224, 0.45);
-		margin: 0 0 2rem 0;
+		margin: 0 0 2.5rem 0;
 	}
 
 	.cta {
@@ -95,66 +115,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		border-color: rgba(224, 224, 224, 0.35);
 	}
 
-	.button-secondary {
-		background: transparent;
-		border-color: rgba(224, 224, 224, 0.12);
-	}
-
-	.highlights {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
+	.hero-image {
 		margin-bottom: 3rem;
 	}
 
-	.highlight {
-		padding: 0.75rem 0 0.75rem 1.25rem;
-		border-left: 2px solid rgba(224, 224, 224, 0.2);
-	}
-
-	.highlight h3 {
-		font-size: 1rem;
-		font-weight: 600;
-		margin: 0 0 0.25rem 0;
-		color: #e0e0e0;
-	}
-
-	.highlight p {
-		font-size: 0.95rem;
-		color: rgba(224, 224, 224, 0.45);
-		margin: 0;
-		line-height: 1.5;
-	}
-
-	.code-example {
-		margin: 0 auto 3rem auto;
-	}
-
-	.code-example pre {
-		background: rgba(0, 0, 0, 0.4);
-		border: 1px solid rgba(224, 224, 224, 0.12);
+	.hero-image img {
+		width: 100%;
 		border-radius: 8px;
-		padding: 1.25rem 1.5rem;
-		text-align: left;
-		overflow-x: auto;
+		border: 1px solid rgba(224, 224, 224, 0.08);
 	}
 
-	.code-example code {
-		font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
-		font-size: 0.85rem;
-		color: rgba(224, 224, 224, 0.7);
-		line-height: 1.5;
+	.content-section {
+		margin-bottom: 3rem;
+	}
+
+	.content-section h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin: 0 0 1rem 0;
+		letter-spacing: -0.01em;
+		line-height: 1.3;
+	}
+
+	.content-section p {
+		font-size: 1rem;
+		color: rgba(224, 224, 224, 0.65);
+		margin: 0 0 0.75rem 0;
+		line-height: 1.7;
+	}
+
+	.content-section p:last-child {
+		margin-bottom: 0;
+	}
+
+	.bottom-cta {
+		border-top: 1px solid rgba(224, 224, 224, 0.08);
+		padding-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.bottom-cta p {
+		font-size: 1rem;
+		color: rgba(224, 224, 224, 0.45);
+		margin: 0 0 0.5rem 0;
+	}
+
+	.bottom-cta a {
+		color: #e0e0e0;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+		transition: border-color 0.2s;
+	}
+
+	.bottom-cta a:hover {
+		border-color: #4fc3f7;
+		color: #4fc3f7;
 	}
 
 	@media (max-width: 600px) {
 		h1 {
-			font-size: 2rem;
-		}
-		.tagline {
-			font-size: 1rem;
+			font-size: 1.75rem;
 		}
 		.hero {
-			padding: 2rem 0;
+			padding: 2rem 0 2rem 0;
+		}
+		.content-section h2 {
+			font-size: 1.25rem;
 		}
 	}
 </style>

@@ -2,6 +2,18 @@
 import PostHog from '../components/posthog.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const {
+	title = "Reflection — Your AI team, your infrastructure, your rules",
+	description = "You don't need a better AI tool. You need an AI team. Reflection is the platform for people who think in organizations, not in prompts.",
+	image = "https://reflection.network/og-image.jpg",
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -10,7 +22,16 @@ import Footer from '../components/Footer.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Reflection Network — Build and run AI agents you own</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
 		<PostHog />
 	</head>
 	<body>
