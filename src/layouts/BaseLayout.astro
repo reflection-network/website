@@ -1,0 +1,43 @@
+---
+import PostHog from '../components/posthog.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Reflection Network — Build and run AI agents you own</title>
+		<PostHog />
+	</head>
+	<body>
+		<Nav />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	html, body {
+		margin: 0;
+		padding: 0;
+		min-height: 100%;
+	}
+
+	body {
+		background: #1a1a2e;
+		font-family: system-ui, -apple-system, sans-serif;
+		color: #e0e0e0;
+	}
+
+	main {
+		max-width: 640px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+</style>

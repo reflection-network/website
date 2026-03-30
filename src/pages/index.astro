@@ -1,123 +1,51 @@
 ---
-import PostHogLayout from '../layouts/PostHogLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<PostHogLayout>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Reflection Network</title>
-	</head>
-	<body>
-		<main>
-			<section class="hero">
-				<h1>Reflection Network</h1>
-				<p class="tagline">Become the founder of your AI-native company</p>
-				<p class="description">Create, deploy, and manage a team of AI agents. Your agents. Your infrastructure. Your rules.</p>
+<BaseLayout>
+	<section class="hero">
+		<h1>Reflection Network</h1>
+		<p class="tagline">Become the founder of your AI-native company</p>
+		<p class="description">Create, deploy, and manage a team of AI agents. Your agents. Your infrastructure. Your rules.</p>
 
-				<div class="cta">
-					<a href="https://docs.reflection.network" class="button">Docs</a>
-					<a href="https://github.com/reflection-network" class="button button-secondary">GitHub</a>
-				</div>
-			</section>
+		<div class="cta">
+			<a href="https://docs.reflection.network" class="button">Get Started</a>
+			<a href="https://github.com/reflection-network" class="button button-secondary">GitHub</a>
+			<a href="https://x.com/reflection_dev" class="button button-secondary">Twitter</a>
+		</div>
+	</section>
 
-			<section class="features">
-				<div class="feature-card">
-					<h2>Build your team</h2>
-					<p>Define each agent's role, personality, and capabilities in a config file. No code needed — just declare who each agent is and what they can do.</p>
-					<div class="status-row">
-						<span class="badge badge-built">Built</span>
-						<span class="status-text">Single agent</span>
-						<span class="badge badge-soon">Coming Soon</span>
-						<span class="status-text muted">Multi-agent team management</span>
-					</div>
-				</div>
+	<section class="highlights">
+		<div class="highlight">
+			<h3>Declarative agents.</h3>
+			<p>Nix config, no SDK lock-in.</p>
+		</div>
+		<div class="highlight">
+			<h3>Git-native.</h3>
+			<p>Branch, fork, version, roll back.</p>
+		</div>
+		<div class="highlight">
+			<h3>Run anywhere.</h3>
+			<p>Self-host, swap runtimes with one line.</p>
+		</div>
+	</section>
 
-				<div class="feature-card">
-					<h2>Own everything</h2>
-					<p>Your agents live in Git repos you control. Not locked to any platform, any vendor, any SDK. Fork, branch, version — standard dev workflow.</p>
-					<div class="status-row">
-						<span class="badge badge-built">Built</span>
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<h2>Run anywhere, on anything</h2>
-					<p>Our hosted platform, your VPS, your Mac Mini. OpenClaw, ZeroClaw, Claude Code — whatever runtime exists today or appears tomorrow, you plug it in with one line. Reflection defines who the agent is. The runtime underneath is a replaceable, constantly improving detail.</p>
-					<div class="status-row">
-						<span class="badge badge-built">Built</span>
-						<span class="status-text">Self-hosted, 2 runtimes</span>
-						<span class="badge badge-soon">Coming Soon</span>
-						<span class="status-text muted">Hosted platform, more runtimes</span>
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<h2>Your company evolves</h2>
-					<p>Every change to an agent is a Git commit. Full history, instant rollback. Agents propose improvements to themselves via pull requests — you approve.</p>
-					<div class="status-row">
-						<span class="badge badge-built">Built</span>
-						<span class="status-text">Version control</span>
-						<span class="badge badge-soon">Coming Soon</span>
-						<span class="status-text muted">Self-modification via PR</span>
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<h2>You're the founder</h2>
-					<p>You set the direction and bear the responsibility. Agents execute. Classical management principles applied to AI — delegation, oversight, accountability.</p>
-					<div class="status-row">
-						<span class="badge badge-soon">Coming Soon</span>
-						<span class="status-text muted">Management tooling, observability</span>
-					</div>
-				</div>
-			</section>
-
-			<section class="code-example">
-				<pre><code>{`{
+	<section class="code-example">
+		<pre><code>{`{
   inputs.agent-nix.url = "github:reflection-network/agent.nix";
 
   outputs = { self, agent-nix }:
     agent-nix.lib.mkAgent {
       agent = {
-        name = "Ada";
-        system-prompt = "You are Ada, a helpful assistant.";
+        name = "Agent";
+        system-prompt = "You are Agent, a helpful assistant.";
       };
     };
 }`}</code></pre>
-			</section>
-
-			<footer>
-				<a href="https://docs.reflection.network">Docs</a>
-				<a href="https://github.com/reflection-network">GitHub</a>
-			</footer>
-		</main>
-	</body>
-</html>
-</PostHogLayout>
+	</section>
+</BaseLayout>
 
 <style>
-	html, body {
-		margin: 0;
-		padding: 0;
-		min-height: 100%;
-	}
-
-	body {
-		background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-		font-family: system-ui, -apple-system, sans-serif;
-		color: #fff;
-	}
-
-	main {
-		max-width: 640px;
-		margin: 0 auto;
-		padding: 2rem;
-	}
-
 	.hero {
 		text-align: center;
 		padding: 4rem 0 3rem 0;
@@ -132,109 +60,70 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 
 	.tagline {
 		font-size: 1.25rem;
-		color: rgba(255, 255, 255, 0.85);
+		color: rgba(224, 224, 224, 0.7);
 		margin: 0 0 0.5rem 0;
 	}
 
 	.description {
 		font-size: 1rem;
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(224, 224, 224, 0.45);
 		margin: 0 0 2rem 0;
 	}
 
 	.cta {
 		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		gap: 0.75rem;
+		flex-wrap: wrap;
 	}
 
 	.button {
 		display: inline-block;
 		padding: 0.75rem 2rem;
-		background: rgba(255, 255, 255, 0.1);
-		border: 1px solid rgba(255, 255, 255, 0.25);
+		background: rgba(224, 224, 224, 0.08);
+		border: 1px solid rgba(224, 224, 224, 0.2);
 		border-radius: 6px;
-		color: #fff;
+		color: #e0e0e0;
 		text-decoration: none;
 		font-size: 1rem;
 		transition: background 0.2s, border-color 0.2s;
 	}
 
 	.button:hover {
-		background: rgba(255, 255, 255, 0.2);
-		border-color: rgba(255, 255, 255, 0.4);
+		background: rgba(224, 224, 224, 0.15);
+		border-color: rgba(224, 224, 224, 0.35);
 	}
 
 	.button-secondary {
 		background: transparent;
-		border-color: rgba(255, 255, 255, 0.15);
+		border-color: rgba(224, 224, 224, 0.12);
 	}
 
-	.cta .button + .button {
-		margin-left: 0.75rem;
-	}
-
-	.features {
+	.highlights {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 1rem;
 		margin-bottom: 3rem;
 	}
 
-	.feature-card {
-		background: rgba(255, 255, 255, 0.05);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 10px;
-		padding: 1.5rem;
-		text-align: left;
+	.highlight {
+		padding: 0.75rem 0 0.75rem 1.25rem;
+		border-left: 2px solid rgba(224, 224, 224, 0.2);
 	}
 
-	.feature-card h2 {
-		font-size: 1.25rem;
+	.highlight h3 {
+		font-size: 1rem;
 		font-weight: 600;
-		margin: 0 0 0.75rem 0;
+		margin: 0 0 0.25rem 0;
+		color: #e0e0e0;
 	}
 
-	.feature-card p {
-		color: rgba(255, 255, 255, 0.75);
+	.highlight p {
 		font-size: 0.95rem;
-		line-height: 1.6;
-		margin: 0 0 1rem 0;
-	}
-
-	.status-row {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.5rem;
-		font-size: 0.8rem;
-	}
-
-	.badge {
-		padding: 0.15rem 0.5rem;
-		border-radius: 4px;
-		font-weight: 600;
-		font-size: 0.7rem;
-		text-transform: uppercase;
-		letter-spacing: 0.03em;
-	}
-
-	.badge-built {
-		background: rgba(74, 222, 128, 0.15);
-		color: rgba(74, 222, 128, 0.9);
-		border: 1px solid rgba(74, 222, 128, 0.25);
-	}
-
-	.badge-soon {
-		background: rgba(251, 191, 36, 0.1);
-		color: rgba(251, 191, 36, 0.7);
-		border: 1px solid rgba(251, 191, 36, 0.2);
-	}
-
-	.status-text {
-		color: rgba(255, 255, 255, 0.6);
-	}
-
-	.status-text.muted {
-		color: rgba(255, 255, 255, 0.35);
+		color: rgba(224, 224, 224, 0.45);
+		margin: 0;
+		line-height: 1.5;
 	}
 
 	.code-example {
@@ -242,8 +131,8 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	}
 
 	.code-example pre {
-		background: rgba(0, 0, 0, 0.35);
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(0, 0, 0, 0.4);
+		border: 1px solid rgba(224, 224, 224, 0.12);
 		border-radius: 8px;
 		padding: 1.25rem 1.5rem;
 		text-align: left;
@@ -253,28 +142,8 @@ import PostHogLayout from '../layouts/PostHogLayout.astro';
 	.code-example code {
 		font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
 		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.85);
+		color: rgba(224, 224, 224, 0.7);
 		line-height: 1.5;
-	}
-
-	footer {
-		text-align: center;
-		padding: 2rem 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-	}
-
-	footer a {
-		color: rgba(255, 255, 255, 0.4);
-		text-decoration: none;
-		font-size: 0.85rem;
-		transition: color 0.2s;
-	}
-
-	footer a:hover {
-		color: rgba(255, 255, 255, 0.7);
 	}
 
 	@media (max-width: 600px) {
